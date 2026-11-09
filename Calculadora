@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Calculadora {
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+
+        double num1, num2, resultado;
+        int opcao;
+
+        System.out.println("=== CALCULADORA ===");
+
+        System.out.print("Digite o primeiro numero: ");
+        num1 = entrada.nextDouble();
+
+        System.out.print("Digite o segundo numero: ");
+        num2 = entrada.nextDouble();
+
+        System.out.println("\nEscolha a operacao:");
+        System.out.println("1 - Adicao");
+        System.out.println("2 - Subtracao");
+        System.out.println("3 - Multiplicacao");
+        System.out.println("4 - Divisao");
+
+        System.out.print("Opcao: ");
+        opcao = entrada.nextInt();
+
+        switch (opcao) {
+
+            case 1:
+                resultado = num1 + num2;
+                System.out.println("Resultado: " + resultado);
+                break;
+
+            case 2:
+                resultado = num1 - num2;
+                System.out.println("Resultado: " + resultado);
+                break;
+
+            case 3:
+                resultado = num1 * num2;
+                System.out.println("Resultado: " + resultado);
+                break;
+
+            case 4:
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                    System.out.println("Resultado: " + resultado);
+                } else {
+                    System.out.println("Nao e possivel dividir por zero!");
+                }
+                break;
+
+            default:
+                System.out.println("Opcao invalida!");
+        }
+
+        entrada.close();
+    }
+}
